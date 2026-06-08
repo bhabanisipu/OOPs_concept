@@ -20,7 +20,7 @@ class chatbook:
         elif user_input == '3':
             self.my_posts()
         elif user_input == '4':
-            pass
+            self.send_message()
         else:
             exit()
     def signup(self):
@@ -50,6 +50,15 @@ class chatbook:
             print(f"following content has been posted {txt}")
         else:
             print("you need to login first to post something !!")
+        print("\n")
+        self.menu()
+    def send_message(self):
+        if self.loggedin == True:
+            txt = input("enter your message here : ")
+            friend = input("whom to you want to send the message to ? : ")
+            print(f"following content has been sent to {friend} : {txt}")
+        else:
+            print("you need to login first to send a message !!")
         print("\n")
         self.menu()
 
